@@ -48,7 +48,7 @@ const addInput = (placeholder) => {
     </div>
     <input type="text" class="popup__input popup__input--draggable" placeholder="${placeholder ? placeholder : addInputValue.value}">
     <div class="delete-input-btn">
-    <img src="images/trash.svg" class="img delete-icon"></img>
+    <img src="images/trash.svg" class="delete-icon" alt="Удалить">
     </div>
     </div>
     `
