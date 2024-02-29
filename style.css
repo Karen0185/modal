@@ -315,9 +315,21 @@ button {
         max-width: 200px;
     }
 
-    input,
-    input::placeholder,
     button {
         font-size: 12px;
+    }
+
+    .popup__input {
+        padding: 11.5px 10px;
+    }
+
+    input,
+    input::placeholder {
+        font-size: 11px;
+        letter-spacing: inherit;
+    }
+
+    input {
+        padding-right: 35px !important;
     }
 }
