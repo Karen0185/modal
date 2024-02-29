@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.overlay.hide {
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: -0;
+    background-color: #000;
+    opacity: 0.25;
+    transition: opacity .3s ease-in-out;
+    z-index: 100;
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 520px;
+    width: 95%;
+    max-height: 90vh;
+    height: max-content;
+    background-color: #fff;
+    padding: 25px;
+    font-family: 'Inter', sans-serif;
+    transition: opacity .3s ease-in-out;
+    z-index: 101;
+    overflow-y: scroll;
+}
+
+.popup::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+.popup::-webkit-scrollbar-thumb {
+    background-color: #2f353d30;
+    border-radius: 50px;
+}
+
+.popup.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.popup__subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18.15px;
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.popup__hide {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    transition: all .2s ease-in-out;
+}
+
+.popup__hide:hover {
+    opacity: 0.8;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.popup__input {
+    font-weight: 400;
+    font-size: 14;
+    padding: 11.5px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: calc(100% - 45px);
+    color: #2F353D;
+    transition:all .3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+.popup__input--fixed {
+    background-color: #F4F6F8;
+    margin-left: 45px;
+}
+
+.popup__input--fixed:hover {
+    background-color: #eff2f5;
+}
+
+.popup__input--draggable {
+    background-color: #EFF5FF;
+    margin-left: 5px;
+    padding-right: 35px;
+}
+
+.popup__input--draggable:hover {
+    background-color: #e9eef7
+}
+
+.fixed,
+.draggable {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.draggable {
+    margin-top: 10px;
+}
+
+.draggable__input {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.draggable-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #F4F6F8;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.draggable-icon svg g path {
+    transition: all .3s ease-in-out;
+}
+
+.draggable-icon:hover svg g path {
+    fill: #5898FF;
+}
+
+.draggable-icon:hover {
+    background-color: #fff;
+}
+
+.delete-input-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.delete-icon {
+    transition: all .3s ease-in-out;
+}
+
+.delete-icon:hover {
+    opacity: .8;
+}
+
+.add-input__input-wrapp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .add-input__input-wrapp input {
+    border-radius: 5px;
+    margin-left: 45px;
+    width: calc(100% - 45px);
+    color: #5898FF;
+    border: 1px solid #5898FF;
+    padding: 11.5px 10px 11.5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    outline: none;
+}
+
+.popup .add-input__input-wrapp input::placeholder {
+    color: #5898FF;
+}
+
+.add-input__btn {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-input__btn:hover {
+    transform: rotate(180deg);
+}
+
+.popup .add-input__input:hover {
+    color: #75aaff;
+    border-color: #75aaff;
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.add-input__buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.add-input__buttons button {
+    padding: 11.5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-input__buttons .save-btn {
+    background-color: #5898FF;
+    color: #fff;
+}
+
+.add-input__buttons .cancel-btn {
+    background-color: #F4F6F8;
+    color: #2F353D;
+}
+
+.draggable__input.dragging {
+  opacity: 0.6;
+}
+.draggable__input.dragging :where(.details, i) {
+  opacity: 0;
+}
+
+
+.popup-show_btn {
+    background-color: #5898FF;
+    color: #fff;
+    padding: 11.5px 15px;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 413px) {
+    .popup__title {
+        font-size: 16px;
+    }
+
+    .popup__subtitle {
+        font-size: 12px;
+        line-height: 14px;
+        max-width: 200px;
+    }
+
+    input,
+    input::placeholder,
+    button {
+        font-size: 12px;
+    }
+}
