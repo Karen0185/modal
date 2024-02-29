@@ -244,6 +244,11 @@
     align-items: center;
 }
 
+.add-input__btn.hide {
+    transform: rotate(18deg);
+    opacity: 0;
+}
+
 .add-input__btn:hover {
     transform: rotate(180deg);
 }

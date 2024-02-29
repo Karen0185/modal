@@ -72,12 +72,14 @@ addInputBtn.addEventListener('click', () => {
         inputs.push(addInputValue.value);
         addInput()
     } else {
-        addInputValue.classList.add('warning')
+        addInputValue.classList.add('warning');
+        addInputBtn.classList.add('hide')
     }
 })
 
 addInputValue.addEventListener('input', () => {
     addInputValue.classList.remove('warning')
+    addInputBtn.classList.remove('hide')
 })
 
 inputsInit()
