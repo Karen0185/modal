@@ -68,12 +68,8 @@ const deleteInput = (element) => {
 };
 
 addInputBtn.addEventListener('click', () => {
-    if(addInputValue.value != '') {
         inputs.push(addInputValue.value);
         addInput()
-    } else {
-        addInputValue.classList.add('warning')
-    }
 })
 
 addInputValue.addEventListener('input', () => {
