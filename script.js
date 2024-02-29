@@ -58,6 +58,8 @@ const addInput = (placeholder) => {
     deleteInputBtn.addEventListener('click', () => {
         deleteInput(newInput);
     });
+
+    addInputValue.value = ''
 }
 
 const deleteInput = (element) => {
@@ -66,8 +68,16 @@ const deleteInput = (element) => {
 };
 
 addInputBtn.addEventListener('click', () => {
-    inputs.push(addInputValue.value);
-    addInput()
+    if(addInputValue.value != '') {
+        inputs.push(addInputValue.value);
+        addInput()
+    } else {
+        addInputValue.classList.add('warning')
+    }
+})
+
+addInputValue.addEventListener('input', () => {
+    addInputValue.classList.remove('warning')
 })
 
 inputsInit()

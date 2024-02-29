@@ -221,6 +221,17 @@
 
 .popup .add-input__input-wrapp input::placeholder {
     color: #5898FF;
+    transition: all .3s ease-in-out;
+}
+
+.popup .add-input__input-wrapp input.warning {
+    border: 1px solid transparent;
+    background-color: #ffd8d8;
+    transition: all .3s ease-in-out;
+}
+
+.popup .add-input__input-wrapp input.warning::placeholder {
+    color: #ff8686;
 }
 
 .add-input__btn {
